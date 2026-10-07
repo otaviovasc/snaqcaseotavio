@@ -100,3 +100,8 @@ button { cursor: pointer; }
 .scheduled-action-link { color: var(--green, #008b50); text-decoration: underline; text-underline-offset: 3px; padding: 5px 0; }
 .scheduled-action-link:hover { color: #005e36; }
 .scheduled-action-link:focus-visible { outline: 2px solid #008b50; outline-offset: 3px; }
+.delivery-explanation { margin-top: 16px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 9px; background: #f8faf8; font-size: 12px; line-height: 1.6; }
+.delivery-explanation summary { cursor: pointer; color: var(--green-dark); font-weight: 700; }
+.delivery-explanation p { margin: 12px 0; }
+.delivery-request { min-width: 0; padding: 12px; background: #fff; border: 1px solid var(--line); border-radius: 7px; }
+.delivery-request pre { white-space: pre-wrap; overflow-wrap: anywhere; margin: 8px 0 0; font-size: 11px; line-height: 1.6; }

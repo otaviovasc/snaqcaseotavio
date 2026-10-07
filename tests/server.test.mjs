@@ -6,6 +6,7 @@ import { join } from 'node:path';
 import { createServer } from '../src/server.mjs';
 import { Pool } from 'pg';
 import { randomUUID } from 'node:crypto';
+import { textPayload } from '../src/uazapi.mjs';
 
 async function fixture(t) {
   const connectionString=process.env.TEST_DATABASE_URL || process.env.DATABASE_URL;
@@ -22,6 +23,22 @@ async function fixture(t) {
   const post = (path,data)=>fetch(url+path,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
   return {app,url,get,post};
 }
+
+test('HTTP: delivery explanation uses the Uazapi payload without sending or exposing credentials',async t=>{
+  const {app,get,post}=await fixture(t);
+  const preview=await(await post('/api/preview',{date:'2026-10-09',campaignId:'cmp-collection'})).json();
+  const candidate=preview.candidates.find(c=>c.status==='eligible');
+  assert.deepEqual(candidate.deliveryPreview.payload,textPayload({...candidate,id:'Gerado ao programar'}));
+  assert.equal(candidate.deliveryPreview.realSendEnabled,false);
+  assert.equal(app.snapshot().communications.length,0);
+  await post('/api/schedule',{date:'2026-10-09',campaignId:'cmp-collection'});
+  const state=await(await get('/api/state')).json();
+  const communication=state.communications[0];
+  assert.deepEqual(communication.deliveryPreview.payload,textPayload(communication));
+  assert.equal(communication.status,'scheduled');
+  assert.deepEqual(Object.keys(communication.deliveryPreview).sort(),['method','path','payload','realSendEnabled']);
+  assert.equal((await post('/api/execute',{mode:'uazapi'})).status,409);
+});
 
 test('HTTP: preview → schedule → simulation → payment → history and CSV reconcile',async t=>{
   const {get,post} = await fixture(t);

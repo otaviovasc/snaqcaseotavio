@@ -4,13 +4,16 @@ import { dirname, extname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { randomUUID } from 'node:crypto';
 import { createApp } from './domain.mjs';
-import { uazapiStatus } from './uazapi.mjs';
+import { uazapiStatus, textPayload } from './uazapi.mjs';
 import { createImageService } from './images.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const mime = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8',
   '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp' };
 const xml = s => String(s).replace(/[<>&"']/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&apos;'}[c]));
+function deliveryPreview(communication){
+  return {method:'POST',path:'/send/text',payload:textPayload({...communication,id:communication.id||'Gerado ao programar'}),realSendEnabled:false};
+}
 const creativeCopy = {
   reminder: ['Sua rotina em dia.', 'Conte com a SnaqFit para seguir em movimento.', 'Um lembrete simples. Mais tranquilidade para treinar.'],
   collection: ['Vamos conversar?', 'Nosso time está aqui para ajudar você.', 'Atendimento próximo. Soluções com clareza.'],
@@ -68,7 +71,10 @@ export async function createServer({connectionString=process.env.DATABASE_URL,sc
         if (new URL(req.headers.origin).host !== req.headers.host) return send(403,{error:'Origem não autorizada.'});
       }
       if (req.method === 'GET' && path === '/api/health') return send(200,{ok:true,mode:'simulation'});
-      if (req.method === 'GET' && path === '/api/state') return send(200,app.snapshot());
+      if (req.method === 'GET' && path === '/api/state') {
+        const snapshot=app.snapshot();
+        return send(200,{...snapshot,communications:snapshot.communications.map(c=>({...c,deliveryPreview:deliveryPreview(c)}))});
+      }
       if (req.method === 'GET' && path === '/api/integration') return send(200,uazapiStatus());
       if (req.method === 'GET' && path === '/api/image-config') return send(200,await images.config());
       if (req.method === 'GET' && path === '/api/export.csv') {
@@ -77,6 +83,10 @@ export async function createServer({connectionString=process.env.DATABASE_URL,sc
       }
       if (req.method === 'POST') {
         const data = await body(req);
+        if(path==='/api/preview'){
+          const preview=app.preview(data);
+          return send(200,{...preview,candidates:preview.candidates.map(c=>({...c,deliveryPreview:deliveryPreview(c)}))});
+        }
         if (path === '/api/images/generate') return send(200,await images.generate(data,app.snapshot().clock));
         if (path === '/api/execute' && data.mode && data.mode !== 'simulation') return send(409,{error:'Envio real bloqueado nesta versão.'});
         const routes = { '/api/preview':'preview', '/api/schedule':'schedule', '/api/execute':'execute',
