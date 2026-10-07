@@ -1,0 +1,18 @@
+{
+  "name": "snaqfit-crm",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.mjs",
+    "test": "node --env-file-if-exists=.env --test tests/*.test.mjs",
+    "check": "node --check src/server.mjs && node --check src/domain.mjs && node --check src/store.mjs && node --check src/uazapi.mjs && node --check src/images.mjs && node --check public/app.js && node --check public/results.js",
+    "validate": "npm run check && npm test"
+  },
+  "dependencies": {
+    "pg": "8.23.1"
+  }
+}

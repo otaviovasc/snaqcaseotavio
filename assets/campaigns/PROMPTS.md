@@ -1,0 +1,28 @@
+# Artes SnaqFit
+
+Quatro peças de marketing geradas com a ferramenta integrada imagegen, tendo a logo fornecida como referência. Pessoas são sintéticas. Revisão comercial: lembrete neutro, regularização sem dados privados, retomada sem culpa, Ouro com dispensa somente do adicional de R$ 100.
+
+## reminder
+
+Arquivo: `reminder.png`
+
+Use case: ads-marketing. Asset type: finished square WhatsApp campaign artwork, not merely a background photograph. Brand: SnaqFit gym network, Brazilian Portuguese. Image 1 is the supplied brand logo reference; preserve its spelling SnaqFit. and use it cleanly in the artwork. Brand palette emerald #009b59, charcoal and off-white; professional editorial fitness photography with spacious bold typography, visually elegant mobile-legible design, natural anatomy, realistic adult Brazilian people of varied appearance, tasteful exercise clothing, no body-shaming, no medical promises. EXACT Portuguese copy only as specified. Keep all key copy comfortably within margins, avoid tiny type, no other brands/watermarks, no collage or multiple panels. Commercial artwork intended to accompany a campaign message. Campaign: helpful due-date reminder. Scene: a relaxed adult woman arriving for training with gym bag in a bright modern gym, a trainer or equipment subtly in background. Mood: calm continuity, confident routine. Exact headline: "Seu treino segue. A gente lembra." Exact supporting copy: "Um lembrete para manter sua mensalidade em dia." Exact CTA: "Conte com a SnaqFit". Do not print a specific due date, personal debt, amount, discount or cancellation threat.
+
+## collection
+
+Arquivo: `collection.png`
+
+Use case: ads-marketing. Asset type: finished square WhatsApp campaign artwork, not merely a background photograph. Brand: SnaqFit gym network, Brazilian Portuguese. Image 1 is the supplied brand logo reference; preserve its spelling SnaqFit. and use it cleanly in the artwork. Brand palette emerald #009b59, charcoal and off-white; professional editorial fitness photography with spacious bold typography, visually elegant mobile-legible design, natural anatomy, realistic adult Brazilian people of varied appearance, tasteful exercise clothing, no body-shaming, no medical promises. EXACT Portuguese copy only as specified. Keep all key copy comfortably within margins, avoid tiny type, no other brands/watermarks, no collage or multiple panels. Commercial artwork intended to accompany a campaign message. Campaign: private overdue-payment regularization and support. Scene: approachable gym staff at welcoming reception with gym training floor softly visible, adult client in calm friendly conversation. Mood: discreet, helpful, respectful; marketing of helpful service, no shame or pressure. Exact headline: "Vamos resolver juntos?" Exact supporting copy: "Nosso time está aqui para ajudar com sua mensalidade." Exact CTA: "Fale com a SnaqFit". No overdue numbers, debt amount, visible private data, promotion or discount.
+
+## return
+
+Arquivo: `return.png`
+
+Use case: ads-marketing. Asset type: finished square WhatsApp campaign artwork, not merely a background photograph. Brand: SnaqFit gym network, Brazilian Portuguese. Image 1 is the supplied brand logo reference; preserve its spelling SnaqFit. and use it cleanly in the artwork. Brand palette emerald #009b59, charcoal and off-white; professional editorial fitness photography with spacious bold typography, visually elegant mobile-legible design, natural anatomy, realistic adult Brazilian people of varied appearance, tasteful exercise clothing, no body-shaming, no medical promises. EXACT Portuguese copy only as specified. Keep all key copy comfortably within margins, avoid tiny type, no other brands/watermarks, no collage or multiple panels. Commercial artwork intended to accompany a campaign message. Campaign: recovery of attendance/routine. Scene: adult man and woman doing a realistic light strength exercise beside a supportive trainer inside inviting gym, natural expressions, sunlight. Exact headline: "Seu próximo treino começa com um passo." Exact supporting copy: "Volte no seu ritmo. A gente te ajuda." Exact CTA: "Vamos treinar?" No guilt, health diagnosis, deadlines or discount.
+
+## offer
+
+Arquivo: `offer.png`
+
+Use case: ads-marketing. Asset type: finished square WhatsApp campaign artwork, not merely a background photograph. Brand: SnaqFit gym network, Brazilian Portuguese. Image 1 is the supplied brand logo reference; preserve its spelling SnaqFit. and use it cleanly in the artwork. Brand palette emerald #009b59, charcoal and off-white; professional editorial fitness photography with spacious bold typography, visually elegant mobile-legible design, natural anatomy, realistic adult Brazilian people of varied appearance, tasteful exercise clothing, no body-shaming, no medical promises. EXACT Portuguese copy only as specified. Keep all key copy comfortably within margins, avoid tiny type, no other brands/watermarks, no collage or multiple panels. Commercial artwork intended to accompany a campaign message. Campaign: eligible Silver members trying Gold. Scene: adult woman performing controlled dumbbell exercise in beautiful modern gym, motivating photorealistic image with premium green branding, no unapproved specific benefit claims. Exact headline: "Experimente o Ouro." Exact supporting main copy prominently legible: "Um ciclo sem o adicional de R$ 100." Exact conditions, clearly legible: "Prata continua pago. Depois, só com sua confirmação." Exact CTA: "Conheça as condições". Do not say free gym, free membership, free Prata or automatic paid renewal. Preserve exact price condition without inventing benefits.
+

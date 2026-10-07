@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f1713" />
+    <title>SnaqFit · Operação de relacionamento</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/results.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand"><img src="/assets/logo-snaqfit.png" alt="SnaqFit" /></div>
+        <nav class="nav" aria-label="Navegação principal">
+          <button class="nav-item active" data-route="overview"><span class="nav-icon">⌂</span><span>Visão geral</span></button>
+          <button class="nav-item" data-route="campaigns"><span class="nav-icon">✦</span><span>Campanhas</span></button>
+          <button class="nav-item" data-route="schedule"><span class="nav-icon">□</span><span>Operação</span></button>
+          <button class="nav-item" data-route="students"><span class="nav-icon">♙</span><span>Alunos</span></button>
+          <button class="nav-item" data-route="metrics"><span class="nav-icon">↗</span><span>Resultados</span></button>
+        </nav>
+        <div class="sidebar-foot">
+          <div class="integration-dot" id="integration-dot"></div>
+          <div><strong id="integration-label">Carregando integração</strong><small id="integration-detail">WhatsApp</small></div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <button class="menu-btn" id="menu-btn" aria-label="Abrir menu">☰</button>
+          <div><div class="eyebrow" id="page-eyebrow">CENTRAL SNAQFIT</div><h1 id="page-title">Visão geral</h1></div>
+          <div class="topbar-actions">
+            <div class="clock"><span>Data do cenário</span><strong id="scenario-clock">—</strong></div>
+            <button class="btn dark event-cta" data-action="open-simulation"><span>＋</span><span class="event-label">Registrar evento</span></button>
+          </div>
+        </header>
+        <div class="demo-banner"><strong>DADOS DE DEMONSTRAÇÃO</strong><span>Nenhum WhatsApp real é enviado.</span></div>
+        <section id="app" class="content" aria-live="polite"><div class="loading"><span></span><p>Preparando a operação…</p></div></section>
+      </main>
+    </div>
+    <div class="scrim" id="scrim"></div>
+    <div class="drawer-scrim" id="drawer-scrim"></div>
+    <aside class="event-drawer" id="event-drawer" aria-hidden="true" aria-label="Registrar evento"></aside>
+    <div class="toast-region" id="toasts" aria-live="polite"></div>
+    <script src="/results.js" defer></script>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
